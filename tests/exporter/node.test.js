@@ -3,7 +3,9 @@ import { jest } from '@jest/globals'
 import fs from 'fs'
 import { fileCleanup } from '../_tools'
 import * as utils from '../../src/exporter/node.js'
-import common from '../../src/retrieval.js'
+
+// extension file should export the standard functions
+import * as common from '../../src/retrieval.js'
 
 
 const testOutputDirName = 'tests_output'
