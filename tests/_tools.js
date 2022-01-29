@@ -1,5 +1,8 @@
 ﻿
 import fs from 'fs'
+import path from 'path'
+
+const __dirname = process.env.PWD
 
 export const fileCleanup = (testOutputDirName, fileNamePartial) => {
     try {
@@ -11,14 +14,12 @@ export const fileCleanup = (testOutputDirName, fileNamePartial) => {
             })
         }
 
-        fs.readdir('./', (err, files) => {
+        fs.readdir(__dirname, (err, files) => {
             if (err) throw err
 
             for (const file of files) {
-                if (file.includes(fileNamePartial)) {
-                    fs.unlink(file, err => {
-                        if (err) throw err
-                    })
+                if (file.includes(fileNamePartial) && fs.existsSync(path.join(__dirname, file))) {
+                    fs.unlinkSync(path.join(__dirname, file))
                 }
             }
         })
