@@ -19,7 +19,7 @@ Currently you need to supply these 5 files:
     - `utils` - contains two helper methods: `utils.handleError(message)` for any exception (handled on command line and web gui) and `updateStatus(text, percent, success)` where text is a status message, percent an optional progress (0-1), and success is a boolean signaling operation result.
     - `options` - is an object containing arbitrary parameters needed for your exporter script (username, api key, etc.) that you can request via either command line or the web component above.
   - `getFileName(result)` method - should return string that will be the filename of all export files, called with `getExport` result for context.
-- template.js - Should export a [DoT template](https://olado.github.io/doT/index.html) string, to be rendered with the result output.
+- template.js - Should export a function taking an `options` argument, returning a [DoT template](https://olado.github.io/doT/index.html) string - used to render a html output.
 
 Once these files are set:
 

@@ -80,7 +80,7 @@ export const generateExport = async (options, utils) => {
 
             if (!options.mode || options.mode === 'html') {
                 const file = filePath(result) + '.html'
-                const template = dot.template(templateContent)
+                const template = dot.template(templateContent(options))
 
                 createdFiles.push(new Promise((resolve) => {
                     fs.writeFile(file, template(result), () => {

@@ -43,7 +43,7 @@ class Exporter extends Component {
                         'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(result))
                     )
                 } else {
-                    const template = doT.template(templateContent)
+                    const template = doT.template(templateContent(this.state.options))
                     this.download(
                         getFileName(result) + '.html',
                         'data:text/html;charset=utf-8,' + encodeURIComponent(template(result))
