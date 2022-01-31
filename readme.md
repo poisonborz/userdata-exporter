@@ -1,8 +1,8 @@
 
 # poisonborz/user-data-exporter
 
-A framework with the aim of easy creation of tools for personal data extraction off of web platforms - producing output directly from the web, or through a multiplatform command line utility. It is intended for offshoot projects that only need to additionally supply minimal platform-specific code.
-At the moment supports purely textual (json) data, possibility for including binary files are planned.
+A framework with the aim of easy creation of tools for personal data extraction off of web platforms - producing output directly from the web, or through a multiplatform command line utility. It is intended for offshoot projects - just supply your platform-specific retrieval code and web input components.
+At the moment it supports purely textual single-file (json) data, binary file handling is considered.
 
 Note: this codebase needs additional extension files to successfully build/function.
 [See my repositories](https://github.com/poisonborz?tab=repositories&q=data-exporter) for live examples, or read below to build your own.
